@@ -1,0 +1,29 @@
+
+.hover-line {
+  position: relative;
+}
+
+.hover-line::after {
+  content: '';
+  display: block;
+  height: 2px; 
+  background-color: hsl(26, 100%, 55%);
+  position: absolute;
+  width: 0;
+  bottom: -2.66rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.hover-line:hover::after {
+  width: 100%;
+}
+.avatar {
+  border-radius: 50%;
+  transition: 0.2s ease-in-out;
+}
+.avatar:hover {
+  border: 1.2px solid hsl(26, 100%, 55%);
+  border-radius: 50%;
+}
