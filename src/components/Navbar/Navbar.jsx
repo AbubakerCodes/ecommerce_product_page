@@ -24,6 +24,9 @@ function Navbar() {
   function handleToggleMenu() {
     setIsMenuOpen(prevState => !prevState);
   }
+  const handleMobileNavClick = () => {
+    isLargeScreen ? setIsMenuOpen(prevVal => (prevVal)) : setIsMenuOpen(prevVal => (prevVal, !prevVal));
+  }
   return (
     <>
     <ShoppingCart isCartOpen={isOpen} /> 
@@ -53,7 +56,7 @@ function Navbar() {
         src={icon_close} alt="toggle menu button" />
         {navLinks.map((navLink, index) => {
           return <li key={index} className={`cursor-pointer text-veryDarkBlue sm:font-bold sm:active:text-darkGrayishBlue lg:text-darkGrayishBlue  lg:hover:text-veryDarkBlue`}>
-            <Link to={navLink.path} className={`${isLargeScreen &&`hover-line`} focus:border-brandOrange`}>{navLink.name}</Link>
+            <Link to={navLink.path} onClick={handleMobileNavClick} className={`${isLargeScreen &&`hover-line`} focus:border-brandOrange`}>{navLink.name}</Link>
           </li>
         })}
         
@@ -67,7 +70,7 @@ function Navbar() {
         </svg>
         <span className='absolute bottom-2.5 right-0 sm:px-0.7 py-0.12 px-1 text-sm bg-brandOrange text-white rounded-full cursor-pointer' tabIndex={0}>{cartQuantity > 0 && cartQuantity}</span>
         </div>
-        <img src={image_avatar} alt="avatar" className='md:w-8 sm:w-6 cursor-pointer avatar'/>
+        <a href='/profile'><img src={image_avatar} alt="avatar" className='md:w-8 sm:w-6 cursor-pointer avatar'/></a>
        </div>
       </div>
     </nav>

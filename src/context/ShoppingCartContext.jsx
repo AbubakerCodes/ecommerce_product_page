@@ -35,7 +35,7 @@ export function ShoppingCartProvider ({children}) {
 
 
     return (
-        <ShoppingCartContext.Provider value={{addToCart, removeFromCart, setIsCartOpen, cartItems, cartQuantity}}>
+        <ShoppingCartContext.Provider value={{addToCart, removeFromCart,isCartOpen, setIsCartOpen, cartItems, cartQuantity}}>
             {children}
             <ShoppingCart isCartOpen={isCartOpen}/>
         </ShoppingCartContext.Provider>

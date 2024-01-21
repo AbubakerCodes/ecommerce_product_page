@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom';
 
 function ShoppingCart(props) {
   const {cartItems} = useShoppingCart();
+  const {isCartOpen} = useShoppingCart();
+  const handleCheckoutBtnClick = () => {
+    isCartOpen = true;
+  }
   
 
   return props.isCartOpen && (
@@ -32,7 +36,7 @@ function ShoppingCart(props) {
         <button 
         tabIndex={1}
         className="hover:opacity-70 transition-opacity sm:text-center sm:justify-center sm:py-3 sm:w-[100%] lg:w-[100%] bg-brandOrange text-white text-lg font-medium md:py-4 lg:py-2 lg:px-8 lg:m-0 rounded-md flex items-center ">
-        <Link to="/checkout" className="hover:opacity-70 transition-opacity sm:text-center sm:justify-center sm:py-3 sm:w-[100%] lg:w-[100%] bg-brandOrange text-white text-lg font-medium md:py-4 lg:py-2 lg:px-8 lg:m-0 rounded-md flex items-center ">
+        <Link to="/checkout" onClick={handleCheckoutBtnClick} className="hover:opacity-70 transition-opacity sm:text-center sm:justify-center sm:py-3 sm:w-[100%] lg:w-[100%] bg-brandOrange text-white text-lg font-medium md:py-4 lg:py-2 lg:px-8 lg:m-0 rounded-md flex items-center ">
           <span className="ml-2">Checkout</span>
         </Link>
         </button>

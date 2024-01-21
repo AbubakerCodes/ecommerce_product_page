@@ -4,13 +4,14 @@ import ProductPage from './pages/ProductPage';
 import { ShoppingCartProvider } from './context/ShoppingCartContext';
 import { products } from './data/products';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import {Home} from './pages/Home';
-import {Collections} from './pages/Collections';
-import {Men} from './pages/Men';
-import {Women} from './pages/Women';
-import {Kids} from './pages/Kids';
+import Home from './pages/Home';
+import Collections from './pages/Collections';
+import Men from './pages/Men';
+import Women from './pages/Women';
+import Kids from './pages/Kids';
 import CheckoutPage from './pages/CheckoutPage';
 import Footer from './components/Footer/Footer';
+import Profile from './pages/Profile';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Route path="/men" element={<Men />} />
       <Route path="/women" element={<Women />} />
       <Route path="/kids" element={<Kids />} />
+      <Route path="/profile" element={<Profile />} />
       <Route path="/checkout" element={<CheckoutPage />} />
     </Routes>
     <Footer />
