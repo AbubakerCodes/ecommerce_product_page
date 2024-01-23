@@ -70,7 +70,7 @@ function Navbar() {
         </svg>
         <span className='absolute bottom-2.5 right-0 sm:px-0.7 py-0.12 px-1 text-sm bg-brandOrange text-white rounded-full cursor-pointer' tabIndex={0}>{cartQuantity > 0 && cartQuantity}</span>
         </div>
-        <a href='/profile'><img src={image_avatar} alt="avatar" className='md:w-8 sm:w-6 cursor-pointer avatar'/></a>
+        <Link to='/profile'><img src={image_avatar} alt="avatar" className='md:w-8 sm:w-6 cursor-pointer avatar'/></Link>
        </div>
       </div>
     </nav>
